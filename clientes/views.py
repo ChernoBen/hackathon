@@ -20,6 +20,7 @@ def activation_sent_view(request):
 def signup_view(request):
     form = SignUpForm(request.POST)
     if form.is_valid():
+        '''campos do formulario'''
         user = form.save()
         user.refresh_from_db()
         user.profile.first_name = form.cleaned_data.get('first_name')
