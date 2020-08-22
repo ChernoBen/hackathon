@@ -19,7 +19,7 @@
     <title>{% block title %} {% endblock %}</title>
 
     <!-- Preloader -->
-    <style>
+<style>
         @keyframes hidePreloader {
             0% {
                 width: 100%;
@@ -31,7 +31,10 @@
                 height: 0;
             }
         }
-
+        section {
+            background: #f2f7f3;
+            background-color: #F2F7F3;
+        }
         body>div.preloader {
             position: fixed;
             background: white;
@@ -96,10 +99,10 @@
         </div>
     </div>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white" style="backgr">
         <div class="container">
             <!-- Brand -->
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{% url 'home' %}">
                 <img alt="Image placeholder" src="{% static '/img/brand/logo.svg' %}" id="navbar-logo">
             </a>
             <!-- Toggler -->
@@ -115,13 +118,14 @@
                     <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
                         <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Para Você</a>
                         <div class="dropdown-menu dropdown-menu-single">
-                            <a href="index.html" class="{% url 'home'%}">Homepage</a>
+                            <a href="{% url 'home'%}" class="dropdown-item">Homepage</a>
                             <a href="about.html" class="dropdown-item">About us</a>
                             <a href="contact.html" class="dropdown-item">Contact</a>
                             <div class="dropdown-divider"></div>
+
                             {% if user.is_authenticated %}
                                 <a href="/clientes/logout" class="dropdown-item">Sair</a>
-                                <a href="{% url 'post_new' %}" class="dropdown-item">novo post</a>
+                                <a href="{% url 'post_new' %}" class="dropdown-item">Criar anúncio</a>
                             {% else %}
                                 <a href="/clientes/login" class="dropdown-item">Entrar</a>
                             {% endif %}
@@ -132,36 +136,24 @@
                     </li>
                 </ul>
 
-
-
-
-
                 <!-- Button -->
                 {% if user.is_authenticated %}
                     <a class="navbar-btn btn btn-sm btn-primary d-none d-lg-inline-block ml-3" href="/clientes/logout/">
                         Sair
                     </a>
-                    <a class="navbar-btn btn btn-sm btn-primary d-none d-lg-inline-block ml-3" href="{% url 'post_new' %}" >
-                    Criar anuncio
+                    <a class="navbar-btn btn btn-sm btn-warning d-none d-lg-inline-block" href="{% url 'post_new' %}" >
+                    Criar anúncio
                     </a>
                 {% else %}
                     <a class="navbar-btn btn btn-sm btn-primary d-none d-lg-inline-block ml-3" href="/clientes/login/">
                         Entrar
                     </a>
-                    <a class="navbar-btn btn btn-sm btn-warning d-none d-lg-inline-block" href="{% url 'signup' %}" target="_blank">
+                    <a class="navbar-btn btn btn-sm btn-warning d-none d-lg-inline-block" href="{% url 'sou_mei' %}" target="_blank">
                         Sou MEI
                     </a>
                 {% endif %}
+
                 <!-- Mobile button -->
-
-
-
-
-
-
-                <div class="d-lg-none text-center">
-                    <a href="https://webpixels.io/themes/quick-website-ui-kit" class="btn btn-block btn-sm btn-warning">See more details</a>
-                </div>
             </div>
         </div>
     </nav>
@@ -185,14 +177,14 @@
                     </p>
                     <!-- Buttons -->
                     {% if user.is_authenticated %}
-                    <div class="text-center text-md-left mt-5">
-                        <a href="{% url 'signup' %}" class="btn btn-primary btn-icon">
-                            <span class="btn-inner--text">Quero Ajudar!</span><span class="btn-inner--icon">
-                                <i data-feather="arrow-right"></i>
-                            </span>
-                        </a>
-                        <a href="#" class="btn btn-neutral btn-icon d-none d-lg-inline-block">Anunciar</a>
-                    </div>
+
+                    {% else %}
+                        <div class="text-center text-md-left mt-5">
+                            <a href="{% url 'sou_mei' %}" class="btn btn-primary btn-icon">
+                                Quero Ajudar!
+                            </a>
+                            <a href="#" class="btn btn-neutral btn-icon d-none d-lg-inline-block">Anunciar</a>
+                        </div>
                     {% endif %}
                 </div>
             </div>
@@ -207,80 +199,14 @@
             </div>
         </div>
     </section>
-
+<div class=card-group">
     {% block main %}
 
     {% endblock %}
-
+</div>
     <footer class="position-relative" id="footer-main">
-        <div class="footer pt-lg-7 footer-dark bg-dark">
-            <!-- SVG shape -->
-            <div class="shape-container shape-line shape-position-top shape-orientation-inverse">
-                <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class=" fill-section-secondary">
-                    <polygon points="2560 0 2560 100 0 100"></polygon>
-                </svg>
-            </div>
             <!-- Footer -->
             <div class="container pt-4">
-                <div class="row">
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <!-- Theme's logo -->
-                        <a href="index.html">
-                            <img alt="Image placeholder" src="{% static 'assets/img/brand/light.svg' %}" id="footer-logo">
-                        </a>
-                        <!-- Webpixels' mission -->
-                        <p class="mt-4 text-sm opacity-8 pr-lg-4">Webpixels attempts to bring the best development experience to designers and developers by offering the tools needed for having a quick and solid start in most web projects.</p>
-                        <!-- Social -->
-                        <ul class="nav mt-4">
-                            <li class="nav-item">
-                                <a class="nav-link pl-0" href="https://dribbble.com/webpixels" target="_blank">
-                                    <i class="fab fa-dribbble"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://github.com/webpixels" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.instagram.com/webpixelsofficial" target="_blank">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.facebook.com/webpixels" target="_blank">
-                                    <i class="fab fa-facebook"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
-                        <h6 class="heading mb-3">Account</h6>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="#">Settings</a></li>
-                            <li><a href="#">Billing</a></li>
-                            <li><a href="#">Notifications</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
-                        <h6 class="heading mb-3">About</h6>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Careers</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
-                        <h6 class="heading mb-3">Company</h6>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Community</a></li>
-                            <li><a href="#">Help center</a></li>
-                            <li><a href="#">Support</a></li>
-                        </ul>
-                    </div>
-                </div>
                 <hr class="divider divider-fade divider-dark my-4">
                 <div class="row align-items-center justify-content-md-between pb-4">
                     <div class="col-md-6">
@@ -309,7 +235,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </footer>
     <!-- Core JS  -->
     <script src= "{% static 'assets/libs/jquery/dist/jquery.min.js' %}"></script>

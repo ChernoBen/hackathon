@@ -1,4 +1,4 @@
-
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Conteudo
 from .forms import ConteudoForm
@@ -7,7 +7,8 @@ def home(request):
     conteudos = Conteudo.objects.all()
     return render(request,'homepage/home.html',{'conteudos': conteudos})
 
-
+def sou_mei(request):
+    return render(request,'soumei.html')
 
 
 def post_new(request):

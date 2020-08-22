@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap %}
+{% block title %}
+    MeiAjuda + Sou MEI
+{% endblock %}
+
+{% block main %}
+
+    <section class="slice py-8 bg-dark">
+        <div class="container py-5">
+            <div class="row row-grid align-items-center">
+                <div class="col-lg-8 text-center text-lg-left">
+                    <!-- Heading -->
+                    <h1 class="text-white mb-4">
+                        Nós ajudamos você a vender nesses tempos difíceis. <br>E melhor, de forma gratuita e rápida!
+                    </h1>
+                    <!-- Text -->
+                    <p class="lead text-white opacity-8">
+                        Você também não precisa ter CNPJ pra anunciar seu serviço aqui! Legal, né?
+                    </p>
+                    <!-- Buttons -->
+                    <div class="mt-5">
+                        <a href="{% url 'signup'%}" class="btn btn-warning btn-lg btn-icon">
+                            Cadastro
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SVG separator -->
+        <div class="shape-container shape-line shape-position-bottom">
+            <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class="">
+                <polygon points="2560 0 2560 100 0 100"></polygon>
+            </svg>
+        </div>
+    </section>
+    <div class="shape-container shape-line shape-position-bottom">
+            <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class="">
+                <polygon points="2560 0 2560 100 0 100"></polygon>
+            </svg>
+        </div>
+    </section>
+    <section class="slice slice-lg">
+        <div class="container">
+            <span class="badge badge-primary badge-pill">Como funciona?</span>
+            <div class="row mt-4">
+                <div class="col-lg-6 pr-lg-5">
+                    <p class="h5 lh-180 mb-3">
+                        Com um simples cadastro o seu negócio já começa a aparecer para possiveis clientes de sua região. Tudo isso sem pagar um centavo e sem exigir seu tempo!
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <p class="lead lh-180">
+                        Não é necessário ter CNPJ para se considerar um empreendedor. Pensando nisso, o MeiAjuda agora aceita também o cadastro de pessoas físicas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slice slice-lg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-6">
+                    <img src="{% static 'assets/img/theme/light/img-v-4.jpg' %}" alt="Image" class="rounded-lg img-fluid" />
+                    <div class="text-right mt-4">
+                        <img src="{% static 'assets/img/theme/light/img-1-1000x1000.jpg' %}" alt="Image" class="rounded-lg img-fluid w-50" />
+                    </div>
+                </div>
+                <div class="col-lg-7 col-6">
+                    <img src="{% static 'assets/img/theme/light/img-1-1000x800.jpg' %}" alt="Image" class="rounded-lg img-fluid w-75" />
+                    <div class="text-right mt-4">
+                        <img src="{% static 'assets/img/theme/light/img-2-1000x800.jpg' %}" alt="Image" class="rounded-lg img-fluid" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slice slice-lg pt-10 bg-primary">
+        <!-- SVG separator -->
+        <div class="shape-container shape-line shape-position-top shape-orientation-inverse">
+            <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class="">
+                <polygon points="2560 0 2560 100 0 100"></polygon>
+            </svg>
+        </div>
+        <!-- Container -->
+        <div class="container">
+            <div class="row row-grid">
+                <div class="col-lg-8">
+                    <!-- Badge -->
+                    <span class="badge badge-warning badge-pill">Made with Bootstrap</span>
+                    <!-- Title -->
+                    <h2 class="my-4 text-white">Websites, Dashboards and Web Apps</h2>
+                    <!-- Text -->
+                    <p class="lead text-white lh-190">
+                        Build one product from the ground up using our dedicated tools. A beautiful ecosystem built to sustain productivity and encourage developers to create modern and professional high-end products.
+                    </p>
+                </div>
+            </div>
+            <!-- Milestones -->
+            <div class="row mt-6">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
+                                <div class="p-4 text-center text-sm-left">
+                                    <h3 class="mb-0">10k</h3>
+                                    <p class="text-muted mb-0">
+                                        Customers
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
+                                <div class="p-4 text-center text-sm-left">
+                                    <h3 class="mb-0">55k</h3>
+                                    <p class="text-muted mb-0">
+                                        Downloads
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card shadow-lg rounded-lg border-0 mb-sm-0">
+                                <div class="p-4 text-center text-sm-left">
+                                    <h3 class="mb-0">98%</h3>
+                                    <p class="text-muted mb-0">
+                                        Happy users
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slice slice-lg pb-5">
+    </section>
+    <footer class="position-relative" id="footer-main">
+        <div class="footer pt-lg-7 footer-dark bg-dark">
+            <!-- SVG shape -->
+            <div class="shape-container shape-line shape-position-top shape-orientation-inverse">
+                <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class=" fill-section-secondary">
+                    <polygon points="2560 0 2560 100 0 100"></polygon>
+                </svg>
+            </div>
+{% endblock %}
