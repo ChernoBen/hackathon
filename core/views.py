@@ -6,7 +6,8 @@ from .models import Conteudo
 from .forms import ConteudoForm
 
 def home(request):
-    return render(request,'homepage/home.html')
+    conteudos = Conteudo.objects.all()
+    return render(request,'homepage/home.html',{'conteudos': conteudos})
 
 
 

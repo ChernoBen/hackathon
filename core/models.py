@@ -30,6 +30,7 @@ class Conteudo(models.Model):
     cep = models.CharField(max_length=8)
 
 
+
     def __str__(self):
         return self.titulo
 
