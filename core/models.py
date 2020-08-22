@@ -24,7 +24,7 @@ class Conteudo(models.Model):
 
     usuario = models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
     titulo = models.CharField(max_length=25)
-    imagem = models.CharField(max_length=100)
+    imagem = models.ImageField(upload_to='clients_photos')
     tel = models.IntegerField(null=True)
     descricao = models.TextField(max_length=240)
     cep = models.CharField(max_length=8)

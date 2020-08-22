@@ -1,7 +1,5 @@
 
 from django.shortcuts import render, redirect, get_object_or_404
-from django.utils import timezone
-from django.views.generic import ListView,CreateView,UpdateView
 from .models import Conteudo
 from .forms import ConteudoForm
 
@@ -20,7 +18,7 @@ def post_new(request):
             post = form.save(commit=False)
             post.usuario = request.user
             post.save()
-            return redirect('post_detail',pk=post.pk)
+            return redirect('core/post_detail',pk=post.pk)
     else:
         form = ConteudoForm
         return render(request,'core/post_edit.html',{'form': form})
@@ -36,7 +34,7 @@ def post_edit(request,pk):
         return redirect ('home',pk=post.pk)
     else:
         form = ConteudoForm(instance=post)
-    return render(request,'core/post_edit.html',{'form': form})
+        return render(request,'core/post_edit.html',{'form': form})
 
 
 

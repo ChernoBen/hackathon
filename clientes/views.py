@@ -26,7 +26,7 @@ def signup_view(request):
         user.profile.last_name = form.cleaned_data.get('last_name')
         user.profile.email = form.cleaned_data.get('email')
 
-        user.is_active = False
+        user.is_active = True
         user.save()
         current_site = get_current_site(request)
         subject = 'Por favor ative sua conta'
@@ -38,7 +38,7 @@ def signup_view(request):
             'token': account_activation_token.make_token(user),
         })
         user.email_user(subject,message)
-        return redirect('activation/activation_sent.html')
+        return redirect('home')
     else:
         form = SignUpForm()
     return render(request,'signup/signup.html', {'form': form})
@@ -64,7 +64,7 @@ def activate(request,uidb64,token):
 
 
 
-
+'''onde tiver 'home' era activation/activation_sent.html '''
 
 
 

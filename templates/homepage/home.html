@@ -9,7 +9,7 @@
 <div class="card-group">
 {% for conteudo in conteudos %}
     <div class="card">
-        <img class="card-img-top" src="#" alt="Card image cap">
+        <img class="card-img-top" src="media/{{ conteudo.imagem }}" alt= {{ conteudo.usuario }} width="50" height="50"/>
         <div class="card-body">
             <h5 class="card-title">{{ conteudo.titulo }}</h5>
         <p class="card-text">{{ conteudo.descricao }}</p>

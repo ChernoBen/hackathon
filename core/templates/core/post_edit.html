@@ -11,7 +11,7 @@
                             <h4 class="card-title text-center">Criar anuncio</h4>
                             <form method="POST">
                                 {% csrf_token %}
-                                {{ form.as_p }}
+                                {{ form|bootstrap }}
                                 <button type="submit" class="btn btn-primary btn-block">Publicar</button>
                             </form>
                         </div>

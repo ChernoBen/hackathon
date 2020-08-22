@@ -17,6 +17,7 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=100,blank=True)
     email = models.EmailField(max_length=150,verbose_name="Seu email aqui")
     begin_date = models.DateTimeField(auto_now_add=True)
+    '''era False'''
     signup_confirmation = models.BooleanField(default=False)
 
     def __str__(self):
