@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import SignUp,signup_view,activate,activation_sent_view
+from .views import signup_view,activate,activation_sent_view
 
 
 

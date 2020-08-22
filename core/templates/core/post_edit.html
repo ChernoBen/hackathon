@@ -1,27 +1,22 @@
 {% extends 'base.html' %}
 {% load bootstrap %}
-{%  block title %}
-Signup
+{% block title %}
+    Novo anuncio
 {% endblock %}
-
-{%  block main %}
-<h2> Sign up Form</h2>
-
+{% block main %}
    <div class="row">
             <div class="col-md-4 offset-md-4">
                     <div class="card auth-card">
                         <div class="card-body">
-                            <h4 class="card-title text-center">Login</h4>
+                            <h4 class="card-title text-center">Criar anuncio</h4>
                             <form method="POST">
                                 {% csrf_token %}
-                                <input type="hidden" name="next" value="{{ next }}">
-                                {{ form|bootstrap }}
-                                <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                                {{ form.as_p }}
+                                <button type="submit" class="btn btn-primary btn-block">Publicar</button>
                             </form>
                         </div>
                     </div>
             </div>
         </div>
 
-
-{%  endblock %}
+{% endblock %}
